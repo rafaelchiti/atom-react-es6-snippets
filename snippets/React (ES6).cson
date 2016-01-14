@@ -2,24 +2,29 @@
   'React ES6 Component':
     'prefix': 'rc'
     'body': """
-      import React, {PropTypes} from 'react';
+      import React, { PropTypes, Component } from 'react';
 
-      export default class ${1:MyComponent} extends React.Component {
+      export default class ${1:MyComponent} extends Component {
+        
+        static propTypes = {
+        }
+        
         render() {
           return (${2:<div>MyComponent</div>});
         }
       }
 
-      ${1}.propTypes = {
-      };
-
     """
   'React ES6 Component with Constructor':
     'prefix': 'rcc'
     'body': """
-      import React, {PropTypes} from 'react';
+      import React, { PropTypes, Component } from 'react';
 
-      export default class ${1:MyComponent} extends React.Component {
+      export default class ${1:MyComponent} extends Component {
+        
+        static propTypes = {
+        }
+        
         constructor(props) {
           super(props);
         }
@@ -29,35 +34,6 @@
         }
       }
 
-      ${1}.propTypes = {
-      };
-
-    """
-  'React ES6 Constructor':
-    'prefix': 'rconst'
-    'body': """
-      constructor(props) {
-        super(props);
-        ${1}
-      }
-
-    """
-  'React ES6 Functional Component':
-    'prefix': 'rfunc'
-    'body': """
-      import React, {PropTypes} from 'react';
-
-      export const ${1} = (props) => {
-        return (${2:<div>MyComponent</div>});
-      }
-
-      ${1}.propTypes = {
-      };
-    """
-  'React ES6 bind method to this':
-    'prefix': 'rbm',
-    'body': """
-      this.${1} = this.${1}.bind(this);
     """
   'React ES6 props definition':
     'prefix': 'rpd',
